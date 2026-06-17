@@ -81,7 +81,11 @@
   body.rtl .tab .tab-count { right: auto; left: -7px; }
   body.rtl .add-row { flex-direction: row-reverse; }
   body.rtl .add-btn { order: -1; }
-  body.rtl li { flex-direction: row-reverse; }
+  body.rtl li { flex-direction: row; }
+  body.rtl li input[type="checkbox"] { order: 3; }
+  body.rtl li .item-text { order: 2; text-align: right; }
+  body.rtl li .qty-badge { order: 1; }
+  body.rtl li .del-btn { order: 0; }
   body.rtl .footer-bar { flex-direction: row-reverse; }
   body.rtl .rtl-row { flex-direction: row-reverse; justify-content: flex-end; }
 </style>
@@ -89,7 +93,10 @@
 <body>
 <div class="app">
   <header>
-    <h1>Grocery List</h1>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;">
+      <h1>Grocery List</h1>
+      <span style="font-family:'Courier New',monospace;font-size:0.68rem;color:#2a2a2a;">v1.5</span>
+    </div>
     <div class="subtitle" id="date-label"></div>
     <div class="sync-status loading" id="sync-status">Connecting…</div>
     <label class="rtl-row">
